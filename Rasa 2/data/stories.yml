@@ -1,0 +1,18 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_general
+  - action: utter_info_general
+  - intent: ask_vorzeichen
+  - action: utter_info_vorzeichen
+  - intent: ask_wert
+  - action: utter_info_wert
+  - intent: start_quizz
+  - action: utter_question
+  - intent: affirm
+  - action: utter_incorrect

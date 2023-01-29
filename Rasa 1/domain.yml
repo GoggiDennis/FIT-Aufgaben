@@ -1,0 +1,75 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_deadline
+  - ask_contact_person
+  - inform_name
+  - inform_email
+  - start_event
+
+responses:
+  utter_greet:
+  - text: "Hallo, ich bin heute hier um dich über das Einstellungsverfahren zu informieren. Wenn du mir deinen Namen und e-mail verräts dann kann ich dir auch eine e-mail über das nächste Event geben"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Hat das geholfen?"
+
+  utter_happy:
+  - text: "Sehr gut!"
+
+  utter_goodbye:
+  - text: "Tschüss, auf wiedersehen"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_deadline:
+  - text: "Die Deadline ist der 15. Januar 2022."
+
+  utter_contact_person:
+  - text: "Für mehr Informationen kannst du auch kontaktieren: MDI-FKU@hochschule-rhein-waal.de"
+
+  utter_greet_name:
+  - text: "Hallo, {slot_name}. Wie geht es dir?"
+
+  utter_event:
+  - text: "Okay, {slot_name} ich schreibe dir eine e-mail {slot_email} wenn es ein neues Event gibt"
+
+entities:
+  - name
+  - email
+
+slots:
+  slot_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+      influence_conversation: true
+  slot_email:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email
+      influence_conversation: true
+
+forms:
+  event_form:
+    required_slots:
+        - slot_name
+        - slot_email
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

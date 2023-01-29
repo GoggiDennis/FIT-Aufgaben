@@ -1,0 +1,51 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - start_quizz
+  - ask_general
+  - ask_vorzeichen
+  - ask_wert
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+
+responses:
+  utter_greet:
+  - text: "Hallo, ich bin Rasa! Ich helfe dir heute Ganze Zahlen zu verstehen Ich kann dir auch danach eine Frage stellen."
+
+  utter_info_general:
+  - text: "Ganze Zahlen bestehen aus einem Vorzeichen und einem Wert."
+
+  utter_info_vorzeichen:
+  - text: "Das Vorzeichen gibt an ob eine Zahl positiv oder Negativ ist"
+
+  utter_info_wert:
+  - text: "Der Wert einer Zahl gibt an, wie weit es sich von 0 befindet."
+
+  utter_question:
+  - text: "Ich stell dir noch eine Frage um dich zu testen. Hier ist deine Frage: Ist die Würzel aus 2 eine Ganze Zahl?"
+
+  utter_incorrect:
+  - text: "Das war leider falsch :("
+
+  utter_correct:
+  - text: "Das war richtig! Gut gemacht :)"
+
+  utter_retry:
+  - text: "Versuch es nocheinmal! Dieses mal antwortest du richtig! :)"
+
+  utter_did_that_help:
+  - text: "Hat das geholfen?"
+
+  utter_goodbye:
+  - text: "Auf wiedersehen! Ich hoffe ich konnte dir weiterhelfen."
+
+  utter_cheer_up:
+  - text: "Du schaffst das!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
